@@ -61,10 +61,11 @@ require_once __DIR__ . '/includes/header.php';
         <img class="details-image" src="<?= e($property['image']) ?>" alt="<?= e($property['title']) ?>">
     </div>
     <article class="details-panel">
+        <p class="section-kicker"><?= e($property['property_type']) ?></p>
         <h1><?= e($property['title']) ?></h1>
-        <p><?= e($property['location']) ?></p>
-        <p><strong><?= money($property['price']) ?></strong> - <?= e($property['property_type']) ?></p>
-        <p><?= nl2br(e($property['description'])) ?></p>
+        <p class="property-location"><?= e($property['location']) ?></p>
+        <p class="property-price"><?= money($property['price']) ?></p>
+        <p class="property-description"><?= nl2br(e($property['description'])) ?></p>
         <h2>Contact Details</h2>
         <p><?= e($property['contact_name']) ?></p>
         <p><?= e($property['contact_phone']) ?></p>

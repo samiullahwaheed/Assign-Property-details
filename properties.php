@@ -36,7 +36,10 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 <section class="section">
     <div class="section-heading">
-        <h1>Properties</h1>
+        <div>
+            <p class="section-kicker">Search results</p>
+            <h1>Properties</h1>
+        </div>
     </div>
     <form class="filter-form" method="get">
         <div>
@@ -68,13 +71,16 @@ require_once __DIR__ . '/includes/header.php';
         <div class="property-grid">
             <?php foreach ($properties as $property): ?>
                 <article class="property-card">
-                    <img src="<?= e($property['image']) ?>" alt="<?= e($property['title']) ?>">
+                    <div class="property-image-wrap">
+                        <img src="<?= e($property['image']) ?>" alt="<?= e($property['title']) ?>">
+                        <span class="type-chip"><?= e($property['property_type']) ?></span>
+                    </div>
                     <div class="property-card-body">
                         <h2><?= e($property['title']) ?></h2>
-                        <p><?= e($property['location']) ?></p>
-                        <p><strong><?= money($property['price']) ?></strong> - <?= e($property['property_type']) ?></p>
+                        <p class="property-location"><?= e($property['location']) ?></p>
+                        <p class="property-price"><?= money($property['price']) ?></p>
                         <?php $shortDescription = strlen($property['description']) > 120 ? substr($property['description'], 0, 120) . '...' : $property['description']; ?>
-                        <p><?= e($shortDescription) ?></p>
+                        <p class="property-description"><?= e($shortDescription) ?></p>
                         <a class="button button-outline" href="property-details.php?id=<?= (int) $property['id'] ?>">View Details</a>
                     </div>
                 </article>

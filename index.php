@@ -7,6 +7,7 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 <section class="hero">
     <div class="hero-content">
+        <p class="hero-kicker">Simple property search</p>
         <h1>Find Your Perfect Property</h1>
         <p>Search available properties by location, price range, and type.</p>
         <form class="search-form" action="properties.php" method="get">
@@ -39,16 +40,22 @@ require_once __DIR__ . '/includes/header.php';
 
 <section class="section">
     <div class="section-heading">
-        <h2>Available Properties</h2>
+        <div>
+            <p class="section-kicker">Featured listings</p>
+            <h2>Available Properties</h2>
+        </div>
     </div>
     <div class="property-grid">
         <?php foreach ($properties as $property): ?>
             <article class="property-card">
-                <img src="<?= e($property['image']) ?>" alt="<?= e($property['title']) ?>">
+                <div class="property-image-wrap">
+                    <img src="<?= e($property['image']) ?>" alt="<?= e($property['title']) ?>">
+                    <span class="type-chip"><?= e($property['property_type']) ?></span>
+                </div>
                 <div class="property-card-body">
                     <h3><?= e($property['title']) ?></h3>
-                    <p><?= e($property['location']) ?></p>
-                    <p><strong><?= money($property['price']) ?></strong> - <?= e($property['property_type']) ?></p>
+                    <p class="property-location"><?= e($property['location']) ?></p>
+                    <p class="property-price"><?= money($property['price']) ?></p>
                     <a class="button button-outline" href="property-details.php?id=<?= (int) $property['id'] ?>">View Details</a>
                 </div>
             </article>
