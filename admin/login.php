@@ -39,6 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main class="login-page">
     <section class="login-box">
         <h1>Admin Login</h1>
+        <div class="credential-note" aria-label="Demo admin login details">
+            <p><strong>Admin Email:</strong> admin@example.com</p>
+            <p><strong>Admin Password:</strong> password</p>
+        </div>
         <?php if ($error): ?>
             <p class="error" role="alert"><?= e($error) ?></p>
         <?php endif; ?>
@@ -58,4 +62,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </main>
 </body>
 </html>
-

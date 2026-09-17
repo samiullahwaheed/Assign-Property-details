@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-$host = getenv('DB_HOST') ?: 'localhost';
+$host = getenv('DB_HOST') ?: 'sql205.infinityfree.com';
 $port = getenv('DB_PORT') ?: '3306';
-$dbName = getenv('DB_NAME') ?: 'property_finder';
-$dbUser = getenv('DB_USER') ?: 'root';
-$dbPassword = getenv('DB_PASSWORD') ?: '';
+$dbName = getenv('DB_NAME') ?: 'if0_42943253_property_finder';
+$dbUser = getenv('DB_USER') ?: 'if0_42943253';
+$dbPassword = getenv('DB_PASSWORD') ?: 'infinityfree786';
 
 try {
     $pdo = new PDO(

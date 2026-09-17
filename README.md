@@ -66,9 +66,15 @@ Set these variables for production:
 
 Do not use the local XAMPP database for production. Use a remote MySQL database.
 
-## Deployment Note
+## InfinityFree Deployment
 
-Vercel does not provide native persistent PHP hosting or permanent local file storage like a traditional PHP host. This project includes a simple `vercel.json` for PHP runtime preparation, but a standard PHP host, shared hosting, or VPS is usually simpler for this stack.
+InfinityFree supports PHP and MySQL, so it is a suitable simple deployment target for this project.
 
-For production image uploads, use persistent storage from the hosting provider or a simple external storage service. Local `uploads/` works for XAMPP development.
+Basic deployment steps:
 
+1. Upload the project files to the InfinityFree `htdocs` folder.
+2. Create a MySQL database from the InfinityFree control panel.
+3. Import `database.sql` using phpMyAdmin.
+4. Update `config/database.php` with the database host, name, username, and password from InfinityFree.
+5. Make sure the `uploads/` folder is writable for property images.
+6. Open your InfinityFree site URL and test the public pages and admin panel.

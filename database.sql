@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS property_finder CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE property_finder;
-
 DROP TABLE IF EXISTS inquiries;
 DROP TABLE IF EXISTS properties;
 DROP TABLE IF EXISTS admins;
@@ -52,4 +49,3 @@ VALUES
 ('Skyline Apartment', 'Lahore', 120000, 'Apartment', 'An apartment with city views, secure entry, and convenient access to daily services.', 'assets/images/property-6.svg', 'Mina Tariq', '+92 300 6666666', 'mina@example.com'),
 ('Executive Villa', 'Karachi', 310000, 'Villa', 'A large villa designed for comfortable living with spacious bedrooms and reception areas.', 'assets/images/property-7.svg', 'Omar Farooq', '+92 300 7777777', 'omar@example.com'),
 ('Office Floor', 'Islamabad', 225000, 'Commercial', 'An office floor with an open layout, reception area, and central business access.', 'assets/images/property-8.svg', 'Nadia Iqbal', '+92 300 8888888', 'nadia@example.com');
-
