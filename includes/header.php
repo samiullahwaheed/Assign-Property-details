@@ -7,7 +7,7 @@ $pageTitle = $pageTitle ?? 'Property Finder';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($pageTitle) ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 <header class="site-header">
@@ -19,4 +19,3 @@ $pageTitle = $pageTitle ?? 'Property Finder';
     </nav>
 </header>
 <main>
-
