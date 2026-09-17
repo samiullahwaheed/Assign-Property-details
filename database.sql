@@ -36,7 +36,7 @@ CREATE TABLE inquiries (
 );
 
 INSERT INTO admins (email, password) VALUES
-('admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi');
+('admin@example.com', 'password');
 
 INSERT INTO properties
 (title, location, price, property_type, description, image, contact_name, contact_phone, contact_email)

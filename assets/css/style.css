@@ -1,17 +1,19 @@
 :root {
-    --bg: #f3f5f1;
+    --bg: #eef3ef;
     --surface: #ffffff;
-    --surface-soft: #fbf7ef;
-    --text: #18231f;
-    --muted: #64706a;
-    --primary: #0f5a4a;
-    --primary-dark: #0a4035;
-    --accent: #c98f3d;
-    --accent-dark: #9f6b25;
-    --border: #d9dfd8;
+    --surface-soft: #fff7ea;
+    --text: #16221e;
+    --muted: #62736d;
+    --primary: #0b5d4b;
+    --primary-dark: #073b31;
+    --primary-light: #e2f1ec;
+    --accent: #d89b3d;
+    --accent-dark: #a76516;
+    --border: #dce4de;
     --danger: #b42318;
-    --success: #137333;
-    --shadow: 0 14px 34px rgba(24, 35, 31, 0.11);
+    --success: #12733c;
+    --shadow: 0 18px 45px rgba(14, 36, 30, 0.12);
+    --shadow-soft: 0 8px 24px rgba(14, 36, 30, 0.08);
 }
 
 * {
@@ -21,7 +23,8 @@
 body {
     margin: 0;
     background:
-        linear-gradient(180deg, #ffffff 0, var(--bg) 360px),
+        radial-gradient(circle at top left, rgba(216, 155, 61, 0.15), transparent 280px),
+        linear-gradient(180deg, #ffffff 0, var(--bg) 420px),
         var(--bg);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
@@ -39,8 +42,8 @@ img {
 
 .site-header,
 .site-footer {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid rgba(220, 228, 222, 0.95);
     padding: 18px clamp(16px, 4vw, 48px);
 }
 
@@ -52,7 +55,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0 6px 24px rgba(24, 35, 31, 0.06);
+    box-shadow: var(--shadow-soft);
 }
 
 .site-footer {
@@ -60,12 +63,14 @@ img {
     border-bottom: 0;
     color: var(--muted);
     margin-top: 48px;
+    background: #f8faf7;
 }
 
 .logo {
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    letter-spacing: 0;
     text-decoration: none;
 }
 
@@ -79,20 +84,23 @@ img {
     color: var(--text);
     font-weight: 600;
     text-decoration: none;
-    padding: 6px 0;
+    border-radius: 6px;
+    padding: 8px 10px;
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
-    color: var(--accent-dark);
+    background: var(--primary-light);
+    color: var(--primary-dark);
 }
 
 .hero {
     background:
-        linear-gradient(90deg, rgba(8, 42, 35, 0.88), rgba(15, 90, 74, 0.58)),
+        linear-gradient(100deg, rgba(7, 35, 30, 0.93), rgba(11, 93, 75, 0.68), rgba(216, 155, 61, 0.28)),
         url("../images/property-1.svg") center/cover;
     color: #ffffff;
     padding: clamp(48px, 10vw, 96px) clamp(16px, 4vw, 48px);
+    border-bottom: 5px solid var(--accent);
 }
 
 .hero-content {
@@ -110,14 +118,14 @@ img {
 .hero p {
     max-width: 620px;
     margin-bottom: 28px;
-    color: #edf7f3;
+    color: #eefaf5;
     font-size: 1.08rem;
 }
 
 .section {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 42px clamp(16px, 4vw, 24px);
+    padding: 48px clamp(16px, 4vw, 24px);
 }
 
 .narrow {
@@ -133,6 +141,12 @@ img {
     margin-bottom: 20px;
 }
 
+.section-heading h1,
+.section-heading h2,
+.admin-heading h1 {
+    margin: 0;
+}
+
 .search-form,
 .filter-form {
     background: var(--surface);
@@ -142,7 +156,12 @@ img {
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(4, minmax(140px, 1fr)) auto;
-    padding: 18px;
+    padding: 20px;
+}
+
+.hero .search-form {
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.23);
 }
 
 .filter-form {
@@ -152,6 +171,7 @@ img {
 label {
     display: block;
     color: #25342f;
+    font-size: 0.92rem;
     font-weight: 700;
     margin-bottom: 6px;
 }
@@ -164,8 +184,14 @@ textarea {
     color: var(--text);
     font: inherit;
     background: #ffffff;
-    padding: 10px 12px;
+    padding: 11px 12px;
     width: 100%;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #b8c6bd;
 }
 
 textarea {
@@ -191,20 +217,25 @@ a:focus {
     display: inline-block;
     font: inherit;
     font-weight: 700;
-    padding: 10px 16px;
+    padding: 11px 18px;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 8px 18px rgba(11, 93, 75, 0.18);
+    transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
 }
 
 .button:hover,
 .button:focus {
     background: linear-gradient(180deg, #176b59, #08382f);
+    box-shadow: 0 12px 24px rgba(11, 93, 75, 0.25);
+    transform: translateY(-1px);
 }
 
 .button-outline {
     background: #fffaf1;
     border-color: #e4c18a;
     color: var(--primary);
+    box-shadow: none;
 }
 
 .button-outline:hover,
@@ -216,8 +247,8 @@ a:focus {
 
 .property-grid {
     display: grid;
-    gap: 22px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
 }
 
 .property-card {
@@ -238,22 +269,33 @@ a:focus {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     width: 100%;
+    background: var(--primary-light);
 }
 
 .property-card-body {
-    padding: 18px;
+    padding: 20px;
 }
 
 .property-card h2,
 .property-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.16rem;
+    line-height: 1.3;
     margin: 0 0 8px;
     color: var(--primary-dark);
 }
 
+.property-card p {
+    color: var(--muted);
+    margin: 8px 0;
+}
+
+.property-card strong {
+    color: var(--text);
+}
+
 .details-layout {
     display: grid;
-    gap: 28px;
+    gap: 30px;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
 }
 
@@ -274,7 +316,7 @@ a:focus {
 
 .details-panel,
 .login-box {
-    padding: 24px;
+    padding: 26px;
 }
 
 .details-panel h1,
@@ -289,14 +331,14 @@ a:focus {
 
 .stack-form {
     display: grid;
-    gap: 16px;
+    gap: 17px;
 }
 
 .notice,
 .success,
 .error {
     border-radius: 6px;
-    padding: 12px 14px;
+    padding: 13px 15px;
 }
 
 .notice {
@@ -317,6 +359,9 @@ a:focus {
 }
 
 .login-page {
+    background:
+        linear-gradient(125deg, rgba(7, 59, 49, 0.88), rgba(11, 93, 75, 0.56)),
+        url("../images/property-3.svg") center/cover;
     display: grid;
     min-height: 100vh;
     place-items: center;
@@ -358,7 +403,7 @@ table {
 th,
 td {
     border-bottom: 1px solid var(--border);
-    padding: 12px;
+    padding: 13px 14px;
     text-align: left;
     vertical-align: top;
 }
@@ -366,13 +411,18 @@ td {
 th {
     background: var(--surface-soft);
     color: var(--primary-dark);
+    font-size: 0.93rem;
+}
+
+tbody tr:hover {
+    background: #fbfdfb;
 }
 
 .table-image {
     border-radius: 6px;
-    height: 58px;
+    height: 62px;
     object-fit: cover;
-    width: 78px;
+    width: 86px;
 }
 
 .actions {

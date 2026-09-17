@@ -37,7 +37,7 @@ Seeded admin login:
 - Email: `admin@example.com`
 - Password: `password`
 
-The password in `database.sql` is stored as a `password_hash()` compatible hash.
+The demo password in `database.sql` is stored as plain text for a simple university demo.
 
 ## Local Setup
 
